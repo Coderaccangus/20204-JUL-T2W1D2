@@ -123,6 +123,8 @@ let displayName2 = username || "guest"
 console.log(displayName2)
 
 // Loops
+
+// for loops
 for (let i = 0; i < 5; i++){
     console.log(`this is iteration number${i}`)
 }
@@ -141,3 +143,45 @@ do {
     console.log(`k's value i do while loop: ${k}`)
     k++
 } while (k < 5)
+
+// for...of => arrays
+// for...in => objects
+
+const fruits = ["Mango", "Orange", "Apple"]
+
+for (const fruit of fruits) {
+    console.log(fruit)
+}
+
+const person = {
+    name: "John",
+    city: "Sydney",
+    age: 27
+}
+
+for (let key in person) {
+    console.log(key)
+    console.log(person[key])
+    console.log("\n")
+}
+
+fruits.forEach(function fruitLoop(fruit, index){
+    console.log(fruit, index)
+
+})
+
+
+const upperCaseFruits = fruits.map(function fruitLoop(fruit){
+    return fruit.toUpperCase()
+
+})
+
+console.log(upperCaseFruits)
+
+const newFruits = ["Mango", "Orange", "Apple", "Banana"]
+
+const filteredFruits = newFruits.filter(function filterLoop(fruit) {
+    return fruit.length > 5
+})
+
+console.log(filteredFruits)

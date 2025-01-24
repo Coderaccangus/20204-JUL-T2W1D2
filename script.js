@@ -185,3 +185,92 @@ const filteredFruits = newFruits.filter(function filterLoop(fruit) {
 })
 
 console.log(filteredFruits)
+
+function greet(name) {
+    console.log("Hello " + name)
+}
+
+greet("Jane")
+
+// name - parameter
+// "Jane" - argument
+
+// return
+function sum(num1, num2) {
+    return num1 + num2
+}
+
+const totalSum = sum(5, 7)
+console.log(totalSum)
+
+// First class functions - first class citezens
+// can be assigned to a variable
+// can be pased as argument to a function
+// can be returned from a function
+
+// annonymous functions
+// const addFn = function(a, b) {
+//     return a + b
+// }
+
+
+// arrow function
+const addFn = (a, b) => {
+    return a + b
+}
+
+const total = addFn(1, 2)
+console.log(total)
+
+function player() {
+    console.log("Player")
+}
+
+function admin() {
+    console.log("Admin")
+}
+
+function greetUser(user) {
+    console.log("Hi")
+    user()
+    
+}
+
+greetUser(player)
+greetUser(admin)
+
+function add(a, b) {
+    return a + b
+}
+
+function subtract(a,b) {
+    return a - b
+}
+
+function calculate(a,b, operation) {
+    return operation(a,b)
+}
+
+console.log(calculate(1,2,add))
+console.log(calculate(7,5,subtract))
+
+
+// Closure 
+// in case of nested fuctions, the inner function will have access to the value of variables of outer functions even when the outer function has finished executing
+function multiplier(factor) {
+    function product(num) {
+        return num * factor
+    }
+    return product
+}
+
+const doubler = multiplier(2)
+
+console.log(doubler(5))
+console.log(doubler(11))
+console.log(doubler(23))
+
+const tripler = multiplier(3)
+
+console.log(tripler(3))
+console.log(tripler(7))
